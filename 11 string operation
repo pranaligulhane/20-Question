@@ -1,1 +1,11 @@
+public class Main {
+    public static void main(String[] args) {
+        String inputString = "Hello123 World!";
+        String result = removeNonAlphabets(inputString);
+        System.out.println(result); // Output: HelloWorld
+    }
 
+    public static String removeNonAlphabets(String inputString) {
+        return inputString.replaceAll("[^a-zA-Z]", "");
+    }
+}
