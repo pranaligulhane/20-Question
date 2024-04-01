@@ -1,1 +1,20 @@
+import java.util.Arrays;
+import java.util.Comparator;
 
+public class SortHalfAscendingHalfDescending {
+    public static void main(String[] args) {
+        int[] array = {5, 10, 3, 8, 6, 12};
+        
+        
+        Arrays.sort(array, 0, array.length / 2);
+     
+        Arrays.sort(array, array.length / 2, array.length);
+        for (int i = array.length / 2, j = array.length - 1; i < j; i++, j--) {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        
+        System.out.println("Array with first half ascending and second half descending: " + Arrays.toString(array));
+    }
+}
