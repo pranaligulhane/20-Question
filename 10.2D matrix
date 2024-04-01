@@ -1,1 +1,29 @@
+public class Main {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {0, 1, 1, 1},
+            {0, 0, 1, 1},
+            {1, 1, 1, 1},
+            {0, 0, 0, 0}
+        };
+
+        int maxOnesRowIndex = findMaxOnesRow(matrix);
+        System.out.println("Row with maximum number of 1's: " + maxOnesRowIndex);
+    }
+
+    public static int findMaxOnesRow(int[][] matrix) {
+        int maxOnes = 0;
+        int maxOnesRowIndex = -1;
+
+        int col = matrix[0].length - 1;
+        for (int i = 0; i < matrix.length; i++) {
+            while (col >= 0 && matrix[i][col] == 1) {
+                col--;
+                maxOnesRowIndex = i;
+            }
+        }
+
+        return maxOnesRowIndex;
+    }
+}
 
