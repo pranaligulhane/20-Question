@@ -1,1 +1,40 @@
-
+public class ArrayRotation {
+    // Function to rotate array elements to the right by k positions
+    static void rotateArray(int[] arr, int k) {
+        int n = arr.length;
+        // Create a temporary array to store elements to be rotated
+        int[] temp = new int[n];
+        
+        // Copy elements from original array to temporary array
+        for (int i = 0; i < n; i++) {
+            temp[(i + k) % n] = arr[i];
+        }
+        
+        // Copy elements from temporary array to original array
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
+        }
+    }
+    
+    // Function to print array elements
+    static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        int k = 2;
+        
+        System.out.println("Original array:");
+        printArray(arr);
+        
+        // Rotate array by k positions
+        rotateArray(arr, k);
+        
+        System.out.println("Array after rotating by " + k + " positions:");
+        printArray(arr);
+    }
+}
