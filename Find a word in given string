@@ -5,7 +5,7 @@ public class MaxRepeatedLetters {
         String wordWithMaxRepeatedLetters = "";
         
         for (String word : words) {
-            int[] frequency = new int[26]; // Assuming only lowercase English alphabets
+            int[] frequency = new int[26]; 
             
             for (char ch : word.toCharArray()) {
                 frequency[ch - 'a']++;
