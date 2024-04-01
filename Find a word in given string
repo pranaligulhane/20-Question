@@ -1,1 +1,33 @@
-
+public class MaxRepeatedLetters {
+    public static String findWordWithMaxRepeatedLetters(String input) {
+        String[] words = input.split("\\s+");
+        int maxRepeatedLetters = 0;
+        String wordWithMaxRepeatedLetters = "";
+        
+        for (String word : words) {
+            int[] frequency = new int[26]; // Assuming only lowercase English alphabets
+            
+            for (char ch : word.toCharArray()) {
+                frequency[ch - 'a']++;
+            }
+            
+            int maxFrequency = 0;
+            for (int freq : frequency) {
+                maxFrequency = Math.max(maxFrequency, freq);
+            }
+            
+            if (maxFrequency > maxRepeatedLetters) {
+                maxRepeatedLetters = maxFrequency;
+                wordWithMaxRepeatedLetters = word;
+            }
+        }
+        
+        return maxRepeatedLetters > 1 ? wordWithMaxRepeatedLetters : "-1";
+    }
+    
+    public static void main(String[] args) {
+        String input = "abcdefghij google microsoft";
+        String word = findWordWithMaxRepeatedLetters(input);
+        System.out.println("Word with the highest number of repeated letters: " + word);
+    }
+}
