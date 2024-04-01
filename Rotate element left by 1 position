@@ -1,15 +1,11 @@
 public class RotateArrayLeft {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5};
-        
-        // Display original array
+       
         System.out.println("Original array:");
         displayArray(array);
-        
-        // Rotate array left by 1 position
+       
         rotateLeft(array);
-        
-        // Display rotated array
         System.out.println("\nArray after rotating left by 1 position:");
         displayArray(array);
     }
